@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovation Advocacy Group</title>
 
-  <!-- Load JP Morgan–style Font -->
+  <!-- IBM Plex Sans -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -15,10 +15,12 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       font-family: 'IBM Plex Sans', sans-serif;
       background-color: #fff;
       color: #111;
+      scroll-behavior: smooth;
+      height: 100%;
     }
 
     header {
@@ -26,29 +28,18 @@
       top: 0;
       width: 100%;
       height: 70px;
-      background-color: white;
+      background: transparent;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding: 0 40px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
     }
 
-    .logo {
-      font-weight: 600;
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
-      color: #111;
-      text-transform: uppercase;
-    }
-
-    nav a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: #333;
-      font-size: 0.95rem;
-      font-weight: 500;
+    .menu-icon {
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
     }
 
     .hero {
@@ -62,22 +53,21 @@
     }
 
     .hero h1 {
-      font-size: 3.5vw;
-      font-weight: 600;
-      max-width: 70%;
+      font-size: 4.5vw;
+      font-weight: 700;
+      text-transform: uppercase;
       color: white;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      -webkit-text-stroke: 1.2px black; /* black outline */
+      letter-spacing: 0.08em;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 6vw;
-        max-width: 90%;
+        font-size: 7vw;
       }
 
-      nav a {
-        margin-left: 15px;
-        font-size: 0.9rem;
+      .menu-icon {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -85,17 +75,11 @@
 <body>
 
   <header>
-    <div class="logo">IAG</div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="investors.html">Investor Relations</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="menu-icon">⋯</div>
   </header>
 
   <section class="hero">
-    <h1>We build transformative companies. From bold ideas to strategic exits.</h1>
+    <h1>Innovation Advocacy Group</h1>
   </section>
 
 </body>
