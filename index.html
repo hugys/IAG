@@ -5,71 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovation Advocacy Group</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #111;
+      background-color: #fff;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
+      height: 70px;
       background-color: white;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 30px;
+      justify-content: space-between;
+      padding: 0 40px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       z-index: 1000;
     }
 
-    header h1 {
-      font-size: 1.2rem;
-      margin: 0;
+    .logo {
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #111;
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 30px;
       text-decoration: none;
       color: #333;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
 
     .hero {
-      margin-top: 70px;
-      position: relative;
-      width: 100%;
       height: 100vh;
-      background: url('your-background-image.jpg') center center / cover no-repeat;
+      background: url('DSC01475.JPG') center center / cover no-repeat;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding-top: 70px;
+    }
+
+    .hero h1 {
+      font-size: 3.5vw;
+      font-weight: 600;
+      max-width: 70%;
       color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
 
-    .hero h2 {
-      font-size: 6vw;
-      margin: 0;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    }
-
-    .hero p {
-      font-size: 4vw;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    }
-
-    @media (min-width: 768px) {
-      .hero h2 {
-        font-size: 3rem;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 6vw;
+        max-width: 90%;
       }
 
-      .hero p {
-        font-size: 1.5rem;
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -77,7 +79,7 @@
 <body>
 
   <header>
-    <h1>Innovation Advocacy Group</h1>
+    <div class="logo">Innovation Advocacy Group</div>
     <nav>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
@@ -87,9 +89,9 @@
   </header>
 
   <section class="hero">
-    <h2>We build companies. Then we sell them.</h2>
-    <p>Bold ideas. Strategic exits. Real results.</p>
+    <h1>We build transformative companies. From bold ideas to strategic exits.</h1>
   </section>
 
 </body>
 </html>
+
