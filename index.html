@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovation Advocacy Group</title>
 
-  <!-- IBM Plex Sans (Amplitude-style) -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- IBM Plex Sans + Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -37,6 +37,7 @@
     }
 
     .logo {
+      font-family: 'IBM Plex Sans', sans-serif;
       font-weight: 600;
       font-size: 1.6rem;
       letter-spacing: 0.1em;
@@ -45,9 +46,18 @@
     }
 
     .menu-icon {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: white;
-      cursor: pointer;
+      line-height: 1;
+      font-family: serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-icon span {
+      line-height: 1;
     }
 
     .hero {
@@ -57,16 +67,16 @@
       justify-content: center;
       align-items: flex-start;
       text-align: center;
-      padding-top: 140px; /* Moves text up ~2 inches */
+      padding-top: 140px; /* Lifted ~2 inches */
     }
 
     .hero h1 {
-      font-size: 3.2vw; /* Smaller text */
-      font-weight: 700;
-      text-transform: uppercase;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8vw;
+      font-weight: 600;
       color: white;
-      -webkit-text-stroke: 2px black; /* Thicker stroke */
-      letter-spacing: 0.08em;
+      -webkit-text-stroke: 2px black;
+      letter-spacing: 0.05em;
     }
 
     @media (max-width: 768px) {
@@ -74,12 +84,12 @@
         font-size: 5vw;
       }
 
-      .menu-icon {
-        font-size: 1.5rem;
-      }
-
       .logo {
         font-size: 1.2rem;
+      }
+
+      .menu-icon {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -88,7 +98,11 @@
 
   <header>
     <div class="logo">IAG</div>
-    <div class="menu-icon">⋯</div>
+    <div class="menu-icon">
+      <span>,</span>
+      <span>,</span>
+      <span>,</span>
+    </div>
   </header>
 
   <section class="hero">
