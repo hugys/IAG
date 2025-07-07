@@ -46,18 +46,19 @@
     }
 
     .menu-icon {
-      font-size: 2rem;
-      color: white;
-      line-height: 1;
-      font-family: serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      height: 18px;
+      width: 24px;
+      cursor: pointer;
     }
 
     .menu-icon span {
-      line-height: 1;
+      height: 2px;
+      background-color: white;
+      width: 100%;
+      border-radius: 1px;
     }
 
     .hero {
@@ -75,9 +76,7 @@
       font-size: 2.8vw;
       font-weight: 600;
       color: white;
-      -webkit-text-stroke: 0.5px black;
       letter-spacing: 0.05em;
-      /* NO text-transform here — we keep natural capitalization */
     }
 
     @media (max-width: 768px) {
@@ -90,7 +89,12 @@
       }
 
       .menu-icon {
-        font-size: 1.5rem;
+        width: 20px;
+        height: 15px;
+      }
+
+      .menu-icon span {
+        height: 2px;
       }
     }
   </style>
@@ -100,9 +104,9 @@
   <header>
     <div class="logo">IAG</div>
     <div class="menu-icon">
-      <span>,</span>
-      <span>,</span>
-      <span>,</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </header>
 
