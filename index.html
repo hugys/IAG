@@ -27,13 +27,12 @@
 
     header {
       width: 100%;
-      height: 3.5cm;
+      height: 3cm; /* updated height */
       background-color: black;
-      color: white;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      padding: 0 40px;
+      padding: 12px 40px 0; /* pushes IAG and menu icon up slightly */
       position: fixed;
       top: 0;
       left: 0;
@@ -45,13 +44,8 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-family: 'IBM Plex Sans', sans-serif;
-    }
-
-    .title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
+      color: white;
+      line-height: 1;
     }
 
     .menu-icon {
@@ -60,6 +54,7 @@
       justify-content: space-between;
       height: 18px;
       width: 24px;
+      margin-top: 4px;
       cursor: pointer;
     }
 
@@ -70,17 +65,32 @@
       border-radius: 1px;
     }
 
+    .title-wrapper {
+      position: absolute;
+      top: calc(12px + 1.6rem + 4px); /* below IAG text */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+    }
+
     .main-image {
       width: 100%;
       height: 100vh;
       object-fit: cover;
-      margin-top: 3.5cm; /* pushes image below the header */
+      margin-top: 3cm;
       display: block;
     }
 
     @media (max-width: 768px) {
       header {
-        padding: 0 20px;
+        padding: 12px 20px 0;
       }
 
       .logo {
@@ -89,7 +99,6 @@
 
       .title {
         font-size: 1.2rem;
-        text-align: center;
       }
 
       .menu-icon {
@@ -103,11 +112,13 @@
 
   <header>
     <div class="logo">IAG</div>
-    <div class="title">Innovation Advocacy Group</div>
     <div class="menu-icon">
       <span></span>
       <span></span>
       <span></span>
+    </div>
+    <div class="title-wrapper">
+      <div class="title">Innovation Advocacy Group</div>
     </div>
   </header>
 
