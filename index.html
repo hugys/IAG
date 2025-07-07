@@ -63,7 +63,8 @@
 
     .hero {
       height: 100vh;
-      background: url('raisingtheflagoniwojima.jpg') center center / cover no-repeat;
+      background: url('raisingtheflagoniwojima.jpg') center center / contain no-repeat;
+      background-color: black; /* fills space if image doesn't fully cover */
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -75,8 +76,11 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.8vw;
       font-weight: 600;
-      color: white;
+      color: black;
       letter-spacing: 0.05em;
+      background-color: rgba(255,255,255,0.65); /* optional: makes text more readable */
+      padding: 10px 20px;
+      border-radius: 5px;
     }
 
     @media (max-width: 768px) {
