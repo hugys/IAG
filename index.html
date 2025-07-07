@@ -15,20 +15,24 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
-      background-color: black;
-      color: white;
+      width: 100%;
       font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background-color: black;
     }
 
     header {
       width: 100%;
-      height: 70px;
+      height: 3.5cm;
       background-color: black;
+      color: white;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 0 40px;
       position: fixed;
       top: 0;
@@ -41,7 +45,13 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: white;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
     }
 
     .menu-icon {
@@ -60,36 +70,26 @@
       border-radius: 1px;
     }
 
-    .hero {
-      padding-top: 100px; /* space for header */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8vw;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 40px;
-    }
-
-    .hero img {
-      max-width: 90vw;
-      max-height: 80vh;
-      object-fit: contain;
+    .main-image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      margin-top: 3.5cm; /* pushes image below the header */
       display: block;
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 5vw;
+      header {
+        padding: 0 20px;
       }
 
       .logo {
         font-size: 1.2rem;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        text-align: center;
       }
 
       .menu-icon {
@@ -103,6 +103,7 @@
 
   <header>
     <div class="logo">IAG</div>
+    <div class="title">Innovation Advocacy Group</div>
     <div class="menu-icon">
       <span></span>
       <span></span>
@@ -110,10 +111,7 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Innovation Advocacy Group</h1>
-    <img src="raisingtheflagoniwojima.jpg" alt="Raising the Flag">
-  </section>
+  <img class="main-image" src="raisingtheflagoniwojima.jpg" alt="Raising the Flag on Iwo Jima" />
 
 </body>
 </html>
