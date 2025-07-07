@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovation Advocacy Group</title>
 
-  <!-- Fonts: IBM Plex Sans & Playfair Display -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <style>
@@ -67,38 +67,21 @@
       justify-content: center;
       align-items: flex-start;
       text-align: center;
-      padding-top: 140px; /* Lifted up ~2 inches */
+      padding-top: 140px;
     }
 
-    .title-stack {
-      position: relative;
-      display: inline-block;
-    }
-
-    .shadow-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8vw;
-      font-weight: 600;
-      color: black;
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      z-index: 0;
-      letter-spacing: 0.05em;
-    }
-
-    .main-text {
+    .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.8vw;
       font-weight: 600;
       color: white;
-      position: relative;
-      z-index: 1;
+      -webkit-text-stroke: 0.5px black; /* very thin black outline */
+      text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     @media (max-width: 768px) {
-      .shadow-text, .main-text {
+      .hero h1 {
         font-size: 5vw;
       }
 
@@ -124,10 +107,7 @@
   </header>
 
   <section class="hero">
-    <div class="title-stack">
-      <h1 class="shadow-text">Innovation Advocacy Group</h1>
-      <h1 class="main-text">Innovation Advocacy Group</h1>
-    </div>
+    <h1>Innovation Advocacy Group</h1>
   </section>
 
 </body>
