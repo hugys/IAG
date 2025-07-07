@@ -15,31 +15,30 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      font-family: 'IBM Plex Sans', sans-serif;
-      background-color: #fff;
-      color: #111;
-      scroll-behavior: smooth;
+    body, html {
       height: 100%;
+      background-color: black;
+      color: white;
+      font-family: 'IBM Plex Sans', sans-serif;
     }
 
     header {
-      position: fixed;
-      top: 0;
       width: 100%;
       height: 70px;
-      background: transparent;
+      background-color: black;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 0 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
       z-index: 1000;
     }
 
     .logo {
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-weight: 600;
       font-size: 1.6rem;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: white;
@@ -62,25 +61,26 @@
     }
 
     .hero {
-      height: 100vh;
-      background: url('raisingtheflagoniwojima.jpg') center center / contain no-repeat;
-      background-color: black; /* fills space if image doesn't fully cover */
+      padding-top: 100px; /* space for header */
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding-top: 140px;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.8vw;
       font-weight: 600;
-      color: black;
-      letter-spacing: 0.05em;
-      background-color: rgba(255,255,255,0.65); /* optional: makes text more readable */
-      padding: 10px 20px;
-      border-radius: 5px;
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -95,10 +95,6 @@
       .menu-icon {
         width: 20px;
         height: 15px;
-      }
-
-      .menu-icon span {
-        height: 2px;
       }
     }
   </style>
@@ -116,6 +112,7 @@
 
   <section class="hero">
     <h1>Innovation Advocacy Group</h1>
+    <img src="raisingtheflagoniwojima.jpg" alt="Raising the Flag">
   </section>
 
 </body>
