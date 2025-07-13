@@ -4,54 +4,125 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Innovation Advocacy Group</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
   <style>
-    /* Enable group-hover sliding effect */
-    .group:hover .group-hover\:translate-x-0 {
-      transform: translateX(0);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    header {
+      width: 100%;
+      height: 2cm;
+      background-color: black;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 18px 40px 0; /* moved IAG & hamburger up by 2mm (20px → 18px) */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      line-height: 1;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 18px;
+      width: 24px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      height: 2px;
+      background-color: white;
+      width: 100%;
+      border-radius: 1px;
+    }
+
+    .title-wrapper {
+      position: absolute;
+      top: calc(18px + 1.6rem + 4px - 4mm); /* moved title up by 4mm */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      margin-top: 2.5cm;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 18px 20px 0;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .menu-icon {
+        width: 20px;
+        height: 15px;
+      }
     }
   </style>
 </head>
-<body class="bg-white text-black">
+<body>
 
-  <!-- Top Black Strip -->
-  <div class="w-full bg-black text-white h-[2.5cm] flex items-center px-6 relative z-50">
-
-    <!-- Left Section: IAG + Hamburger + Dropdown -->
-    <div class="relative group inline-block">
-      <div class="flex items-center space-x-2 cursor-pointer">
-        <span class="text-white text-xl font-bold">IAG</span>
-        <div class="space-y-1">
-          <div class="w-5 h-0.5 bg-white"></div>
-          <div class="w-5 h-0.5 bg-white"></div>
-          <div class="w-5 h-0.5 bg-white"></div>
-        </div>
-      </div>
-
-      <!-- Sliding Dropdown Panel -->
-      <div class="absolute top-[2.5cm] left-0 w-64 h-screen bg-black text-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col space-y-6 p-6"
-           onmouseleave="this.style.transform='translateX(-100%)'">
-        <a href="#company" class="hover:text-gray-300">Company</a>
-        <a href="#careers" class="hover:text-gray-300">Careers</a>
-        <a href="#investors" class="hover:text-gray-300">Investors</a>
-      </div>
+  <header>
+    <div class="logo">IAG</div>
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <!-- Center Section: Innovation Advocacy Group -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 text-lg font-medium">
-      Innovation Advocacy Group
+    <div class="title-wrapper">
+      <div class="title">Innovation Advocacy Group</div>
     </div>
-  </div>
+  </header>
 
-  <!-- Page Content -->
-  <div class="px-10 py-12">
-    <h1 class="text-3xl font-semibold">Welcome to Innovation Advocacy Group</h1>
-    <p class="mt-4 max-w-2xl text-gray-700">
-      Driving innovation through policy, talent, and strategic investment.
-      Discover who we are, what we believe in, and how we move industries forward.
-    </p>
-  </div>
+  <img class="main-image" src="raisingtheflagoniwojima.jpg" alt="Raising the Flag on Iwo Jima" />
 
 </body>
 </html>
-
