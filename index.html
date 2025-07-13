@@ -6,56 +6,52 @@
   <title>Innovation Advocacy Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .menu-hover:hover .menu-panel {
-      transform: translateX(0);
-    }
-
-    .menu-hover .menu-panel {
-      pointer-events: none;
-    }
-
-    .menu-hover:hover .menu-panel,
-    .menu-panel:hover {
-      pointer-events: auto;
+    /* Enable group-hover sliding effect */
+    .group:hover .group-hover\:translate-x-0 {
       transform: translateX(0);
     }
   </style>
 </head>
 <body class="bg-white text-black">
 
-  <!-- Top Bar -->
-  <div class="w-full bg-black text-white h-[2.5cm] flex items-center px-4 relative z-10">
-    <!-- Menu wrapper for hover detection -->
-    <div class="menu-hover flex items-center space-x-3 cursor-pointer relative group">
-      <!-- IAG logo -->
-      <div class="text-2xl font-bold">IAG</div>
+  <!-- Top Black Strip -->
+  <div class="w-full bg-black text-white h-[2.5cm] flex items-center px-6 relative z-50">
 
-      <!-- Hamburger icon -->
-      <div class="space-y-1">
-        <div class="w-6 h-0.5 bg-white"></div>
-        <div class="w-6 h-0.5 bg-white"></div>
-        <div class="w-6 h-0.5 bg-white"></div>
+    <!-- Left Section: IAG + Hamburger + Dropdown -->
+    <div class="relative group inline-block">
+      <div class="flex items-center space-x-2 cursor-pointer">
+        <span class="text-white text-xl font-bold">IAG</span>
+        <div class="space-y-1">
+          <div class="w-5 h-0.5 bg-white"></div>
+          <div class="w-5 h-0.5 bg-white"></div>
+          <div class="w-5 h-0.5 bg-white"></div>
+        </div>
       </div>
 
-      <!-- Sliding Menu -->
-      <div class="menu-panel absolute top-[2.5cm] left-0 w-64 h-screen bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col space-y-6 p-6">
+      <!-- Sliding Dropdown Panel -->
+      <div class="absolute top-[2.5cm] left-0 w-64 h-screen bg-black text-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col space-y-6 p-6"
+           onmouseleave="this.style.transform='translateX(-100%)'">
         <a href="#company" class="hover:text-gray-300">Company</a>
         <a href="#careers" class="hover:text-gray-300">Careers</a>
         <a href="#investors" class="hover:text-gray-300">Investors</a>
       </div>
     </div>
 
-    <!-- Centered Title -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 text-xl">
+    <!-- Center Section: Innovation Advocacy Group -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-lg font-medium">
       Innovation Advocacy Group
     </div>
   </div>
 
-  <!-- Main Content Placeholder -->
-  <div class="p-10">
+  <!-- Page Content -->
+  <div class="px-10 py-12">
     <h1 class="text-3xl font-semibold">Welcome to Innovation Advocacy Group</h1>
-    <p class="mt-4 max-w-xl">Driving innovation through policy, talent, and strategic investment. Discover who we are, what we believe in, and how we move industries forward.</p>
+    <p class="mt-4 max-w-2xl text-gray-700">
+      Driving innovation through policy, talent, and strategic investment.
+      Discover who we are, what we believe in, and how we move industries forward.
+    </p>
   </div>
 
 </body>
 </html>
+
