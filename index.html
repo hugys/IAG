@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Innovation Advocacy Group</title>
 
   <!-- Fonts -->
@@ -119,15 +119,14 @@
       color: white;
       padding: 80px 20px 40px;
       transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.4s ease-in-out;
       z-index: 1000;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
 
-    .menu-wrapper:hover .dropdown-menu,
-    .dropdown-menu:hover {
+    .dropdown-menu.open {
       transform: translateX(0);
     }
 
@@ -137,17 +136,20 @@
       font-size: 1.2rem;
       opacity: 0;
       transform: translateY(20px);
-      animation: rollIn 0.6s ease forwards;
     }
 
-    .dropdown-menu a:nth-child(1) {
-      animation-delay: 0.1s;
+    .dropdown-menu.open a {
+      animation: rollIn 0.5s ease forwards;
     }
-    .dropdown-menu a:nth-child(2) {
-      animation-delay: 0.25s;
+
+    .dropdown-menu.open a:nth-child(1) {
+      animation-delay: 0.3s;
     }
-    .dropdown-menu a:nth-child(3) {
-      animation-delay: 0.4s;
+    .dropdown-menu.open a:nth-child(2) {
+      animation-delay: 0.45s;
+    }
+    .dropdown-menu.open a:nth-child(3) {
+      animation-delay: 0.6s;
     }
 
     @keyframes rollIn {
@@ -192,14 +194,14 @@
     <div class="logo">IAG</div>
 
     <div class="menu-wrapper">
-      <div class="menu-icon">
+      <div class="menu-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
       </div>
 
       <!-- Sliding Dropdown Menu -->
-      <div class="dropdown-menu">
+      <div id="dropdownMenu" class="dropdown-menu">
         <a href="#company">Company</a>
         <a href="#careers">Careers</a>
         <a href="#investors">Investors</a>
@@ -216,6 +218,12 @@
     <div class="hero-text">Transferring desire into reality</div>
   </div>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("open");
+    }
+  </script>
+
 </body>
 </html>
-
