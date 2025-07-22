@@ -91,9 +91,24 @@
       object-fit: cover;
       margin-top: 2.5cm;
       display: block;
+      position: relative;
     }
 
-    /* Dropdown menu - now starts at top and matches hamburger area */
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      z-index: 10;
+      padding: 0 20px;
+    }
+
+    /* Dropdown Menu */
     .dropdown-menu {
       position: fixed;
       top: 0;
@@ -102,7 +117,7 @@
       height: 100vh;
       background-color: black;
       color: white;
-      padding: 80px 20px 40px; /* 80px from top so menu items start below header */
+      padding: 80px 20px 40px;
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
       z-index: 1000;
@@ -119,26 +134,26 @@
     .dropdown-menu a {
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.2rem;
       opacity: 0;
-      transform: translateX(20px);
-      animation: slideIn 0.6s ease forwards;
+      transform: translateY(20px);
+      animation: rollIn 0.6s ease forwards;
     }
 
     .dropdown-menu a:nth-child(1) {
       animation-delay: 0.1s;
     }
     .dropdown-menu a:nth-child(2) {
-      animation-delay: 0.2s;
+      animation-delay: 0.25s;
     }
     .dropdown-menu a:nth-child(3) {
-      animation-delay: 0.3s;
+      animation-delay: 0.4s;
     }
 
-    @keyframes slideIn {
+    @keyframes rollIn {
       to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
       }
     }
 
@@ -163,6 +178,11 @@
       .dropdown-menu {
         width: 200px;
       }
+
+      .hero-text {
+        font-size: 1.8rem;
+        padding: 0 10px;
+      }
     }
   </style>
 </head>
@@ -178,7 +198,7 @@
         <span></span>
       </div>
 
-      <!-- Sliding Dropdown Menu with smooth entry -->
+      <!-- Sliding Dropdown Menu -->
       <div class="dropdown-menu">
         <a href="#company">Company</a>
         <a href="#careers">Careers</a>
@@ -191,7 +211,11 @@
     </div>
   </header>
 
-  <img class="main-image" src="raisingtheflagoniwojima.jpg" alt="Raising the Flag on Iwo Jima" />
+  <div class="main-image-wrapper" style="position: relative;">
+    <img class="main-image" src="raisingtheflagoniwojima.jpg" alt="Raising the Flag on Iwo Jima" />
+    <div class="hero-text">Transferring desire into reality</div>
+  </div>
 
 </body>
 </html>
+
