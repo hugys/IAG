@@ -61,6 +61,7 @@
       margin-top: 4px;
       cursor: pointer;
       z-index: 1001;
+      transition: transform 0.3s ease;
     }
 
     .menu-icon span {
@@ -68,6 +69,20 @@
       background-color: white;
       width: 100%;
       border-radius: 1px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .title-wrapper {
@@ -108,7 +123,6 @@
       padding: 0 20px;
     }
 
-    /* Dropdown Menu */
     .dropdown-menu {
       position: fixed;
       top: 0;
@@ -142,15 +156,9 @@
       animation: rollIn 0.5s ease forwards;
     }
 
-    .dropdown-menu.open a:nth-child(1) {
-      animation-delay: 0.3s;
-    }
-    .dropdown-menu.open a:nth-child(2) {
-      animation-delay: 0.45s;
-    }
-    .dropdown-menu.open a:nth-child(3) {
-      animation-delay: 0.6s;
-    }
+    .dropdown-menu.open a:nth-child(1) { animation-delay: 0.3s; }
+    .dropdown-menu.open a:nth-child(2) { animation-delay: 0.45s; }
+    .dropdown-menu.open a:nth-child(3) { animation-delay: 0.6s; }
 
     @keyframes rollIn {
       to {
@@ -194,7 +202,7 @@
     <div class="logo">IAG</div>
 
     <div class="menu-wrapper">
-      <div class="menu-icon" onclick="toggleMenu()">
+      <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -221,7 +229,9 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("dropdownMenu");
+      const icon = document.getElementById("menuToggle");
       menu.classList.toggle("open");
+      icon.classList.toggle("active");
     }
   </script>
 
