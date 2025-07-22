@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | Innovation Advocacy Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    header {
+      width: 100%;
+      height: 2cm;
+      background-color: black;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 18px 40px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      line-height: 1;
+    }
+
+    .menu-wrapper {
+      position: relative;
+      z-index: 1002;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 18px 40px 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 18px;
+      width: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 1002;
+    }
+
+    .menu-icon span {
+      height: 2px;
+      background-color: white;
+      width: 100%;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .title-wrapper {
+      position: absolute;
+      top: calc(18px + 1.6rem + 4px - 4mm);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .dropdown-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      padding: 80px 20px 40px;
+      transform: translateX(100%);
+      transition: transform 0.4s ease-in-out;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .dropdown-menu.open {
+      transform: translateX(0);
+    }
+
+    .dropdown-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .dropdown-menu.open a {
+      animation: rollIn 0.5s ease forwards;
+    }
+
+    .dropdown-menu.open a:nth-child(1) { animation-delay: 0.3s; }
+    .dropdown-menu.open a:nth-child(2) { animation-delay: 0.45s; }
+    .dropdown-menu.open a:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes rollIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content {
+      margin-top: 3cm;
+      padding: 60px 40px;
+      max-width: 800px;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 18px 20px 0;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .menu-icon {
+        width: 20px;
+        height: 15px;
+        margin: 18px 20px 0 0;
+      }
+
+      .dropdown-menu {
+        width: 200px;
+      }
+
+      .content {
+        padding: 60px 20px;
+        font-size: 1rem;
+      }
+
+      .content h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">IAG</div>
+
+    <div class="menu-wrapper">
+      <div class="menu-icon" id="menuToggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div id="dropdownMenu" class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="company.html">Company</a>
+        <a href="#">Investors</a>
+      </div>
+    </div>
+
+    <div class="title-wrapper">
+      <div class="title">Innovation Advocacy Group</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <h1>Careers at IAG</h1>
+    <p>
+      At Innovation Advocacy Group, we do not judge by background, belief, or appearance. We work with those most suited to the mission.
+    </p>
+    <p>
+      Our recruitment process consists of three stages:
+    </p>
+
+    <p><strong>Part 1: Selection</strong><br>
+    You begin by working with us for six months. During this time, you're evaluated based on how well you complete objectives and how deeply you're able to cooperate. Not surface-level collaboration, but genuine alignment with the team.
+    </p>
+
+    <p><strong>Part 2: Team Integration</strong><br>
+    If you pass the first phase, you become a full member. You’ll take on increasing responsibility and be expected to lead others with the same clarity you demand from yourself.
+    </p>
+
+    <p><strong>Part 3: Partnership</strong><br>
+    You earn your place not just as an employee, but as a stakeholder. Those who prove both competence and loyalty have the opportunity to become partners in the firm.
+    </p>
+
+    <p>
+      Everyone at IAG is evaluated, regardless of their title. We surround ourselves with individuals who burn with the desire to leave a mark and reshape the future. While individual performance is recognized, we know that achieving the exceptional requires full-spectrum teamwork.
+    </p>
+
+    <p><em>Unus pro omnibus, omnes pro uno.</em></p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      const icon = document.getElementById("menuToggle");
+      menu.classList.toggle("open");
+      icon.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
